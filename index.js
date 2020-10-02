@@ -5,7 +5,7 @@ const admin = require("firebase-admin");
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config()
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.fvezj.mongodb.net/burjAlArab?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.fvezj.mongodb.net/${process.env.DB_Name}?retryWrites=true&w=majority`;
 const port = 4000
 
 const app = express()
@@ -68,4 +68,4 @@ client.connect(err => {
 });
 
 
-app.listen(port);
+app.listen(process.env.PORT || port);
