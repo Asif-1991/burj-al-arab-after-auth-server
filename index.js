@@ -8,6 +8,10 @@ require('dotenv').config()
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.fvezj.mongodb.net/${process.env.DB_Name}?retryWrites=true&w=majority`;
 const port = 4000
 
+app.get('/', (req, res)=>{
+    res.send("wow it's working")
+})
+
 const app = express()
 
 app.use(cors());
